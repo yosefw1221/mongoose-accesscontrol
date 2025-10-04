@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "dev": "clear && node dist/index.js",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "accesscontroll-monogoose",
+  "author": "Yosef",
+  "module": "dist/accesscontroll-monogoose.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/accesscontroll-monogoose.cjs.production.min.js",
+      "limit": "30 KB"
+    },
+    {
+      "path": "dist/accesscontroll-monogoose.esm.js",
+      "limit": "30 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "accesscontrol": "^2.2.1",
+    "husky": "^8.0.3",
+    "mongoose": "^7.2.2",
+    "size-limit": "^8.2.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.5.3",
+    "typescript": "^4.4"
+  },
+  "dependencies": {}
+}
